@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AegisMed</string>
+    <string name="channel_critical">Critical medication alarms</string>
+    <string name="channel_standard">Medication reminders</string>
+    <string name="channel_passive">Supplement digest</string>
+    <string name="channel_system">System alerts</string>
+    <string name="notif_dose_title">%1$s is due</string>
+    <string name="notif_take_now">Take now</string>
+    <string name="notif_snooze">Snooze</string>
+    <string name="notif_low_stock">Low stock: %1$s — %2$d doses left</string>
+    <string name="notif_interaction">Interaction warning</string>
+    <string name="escalation_body">AegisMed: %1$s has not confirmed their critical medication (%2$s, due %3$s). Please check on them.</string>
+    <string name="scanner_hint_text">Hold the prescription label inside the frame</string>
+    <string name="scanner_use_capture">Use captured text</string>
+    <string name="cancel">Cancel</string>
+</resources>

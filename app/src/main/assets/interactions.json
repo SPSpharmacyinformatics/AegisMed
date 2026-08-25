@@ -1,0 +1,270 @@
+{
+  "rules": [
+    {
+      "id": "warfarin-nsaid",
+      "title": "Warfarin + NSAID (e.g. ibuprofen, naproxen)",
+      "severity": "contraindicated",
+      "description": "NSAIDs inhibit platelet function and can irritate gastric mucosa; combined with warfarin this sharply raises bleeding risk. Prefer acetaminophen for pain.",
+      "mechanism": "Additive bleeding risk",
+      "aTokens": ["warfarin", "coumadin", "januvia-warfarin"],
+      "bTokens": ["ibuprofen", "naproxen", "diclofenac", "aspirin", "celecoxib", "meloxicam", "advil", "motrin", "aleve"]
+    },
+    {
+      "id": "warfarin-vitamink-food",
+      "title": "Warfarin + high vitamin-K foods",
+      "severity": "major",
+      "category": "food",
+      "description": "Large swings in vitamin-K intake (kale, spinach, broccoli, Brussels sprouts) reduce warfarin effect and destabilize INR. Keep leafy-green intake consistent rather than avoiding it.",
+      "mechanism": "Vitamin-K antagonizes warfarin anticoagulation",
+      "aTokens": ["warfarin", "coumadin"],
+      "bTokens": ["vitamin k", "menaquinone"]
+    },
+    {
+      "id": "statin-grapefruit",
+      "title": "Statin + grapefruit / grapefruit juice",
+      "severity": "moderate",
+      "category": "food",
+      "description": "Grapefruit inhibits intestinal CYP3A4 and can raise statin levels, increasing muscle-toxicity risk (myalgia, rarely rhabdomyolysis). Seville oranges and pomelos act similarly.",
+      "mechanism": "CYP3A4 inhibition",
+      "aTokens": ["simvastatin", "atorvastatin", "lovastatin", "zocor", "lipitor"],
+      "bTokens": ["grapefruit"]
+    },
+    {
+      "id": "levothyroxine-dairy-calcium",
+      "title": "Levothyroxine + dairy / calcium / iron",
+      "severity": "major",
+      "category": "food",
+      "description": "Calcium, iron, soy and dairy bind levothyroxine and cut absorption dramatically. Take levothyroxine fasting, 4 hours apart from calcium/iron supplements.",
+      "mechanism": "Chelation reduces absorption",
+      "aTokens": ["levothyroxine", "synthroid", "levothroid", "euthyrox"],
+      "bTokens": ["calcium", "iron", "ferrous", "multivitamin", "dairy"]
+    },
+    {
+      "id": "tetracycline-dairy-antacid",
+      "title": "Tetracycline-class + dairy / antacids / iron",
+      "severity": "major",
+      "category": "food",
+      "description": "Divalent cations (Ca2+, Mg2+, Fe2+) chelate tetracyclines/doxycycline and can nearly abolish absorption. Separate doses by 2+ hours; take with water not milk.",
+      "mechanism": "Cation chelation",
+      "aTokens": ["doxycycline", "tetracycline", "minocycline", "vibramycin"],
+      "bTokens": ["antacid", "magnesium", "calcium", "iron", "ferrous", "dairy", "omeprazole"]
+    },
+    {
+      "id": "fluoroquinolone-dairy-minerals",
+      "title": "Fluoroquinolone + dairy / mineral supplements",
+      "severity": "moderate",
+      "category": "food",
+      "description": "Calcium, zinc, magnesium and iron reduce ciprofloxacin/levofloxacin absorption. Take tablet with water 2h before or 6h after minerals.",
+      "mechanism": "Cation chelation",
+      "aTokens": ["ciprofloxacin", "levofloxacin", "ofloxacin", "moxifloxacin", "cipro"],
+      "bTokens": ["calcium", "magnesium", "zinc", "iron", "dairy", "antacid"]
+    },
+    {
+      "id": "metformin-alcohol",
+      "title": "Metformin + alcohol",
+      "severity": "major",
+      "category": "alcohol",
+      "description": "Alcohol potentiates metformin's lactate metabolism effects; heavy use raises lactic acidosis risk and hypoglycemia risk.",
+      "mechanism": "Lactate accumulation",
+      "aTokens": ["metformin", "glucophage"],
+      "bTokens": ["alcohol", "ethanol"]
+    },
+    {
+      "id": "insulin-alcohol",
+      "title": "Insulin + alcohol",
+      "severity": "major",
+      "category": "alcohol",
+      "description": "Alcohol inhibits hepatic gluconeogenesis and can cause delayed severe hypoglycemia, especially overnight. Never skip post-dose glucose checks after drinking.",
+      "mechanism": "Impaired gluconeogenesis",
+      "aTokens": ["insulin", "humalog", "novolog", "lantus", "glargine", "lispro", "aspart"],
+      "bTokens": ["alcohol", "ethanol"]
+    },
+    {
+      "id": "acei-potassium",
+      "title": "ACE inhibitor / ARB + potassium supplements or salt substitutes",
+      "severity": "major",
+      "description": "ACE inhibitors and ARBs raise serum potassium; adding K+ supplements or potassium-based salt substitutes risks dangerous hyperkalemia and arrhythmia.",
+      "mechanism": "Aldosterone suppression -> hyperkalemia",
+      "aTokens": ["lisinopril", "enalapril", "ramipril", "captopril", "losartan", "valsartan", "olmesartan", "irbesartan"],
+      "bTokens": ["potassium", "klor-con", "salt substitute"]
+    },
+    {
+      "id": "spironolactone-potassium",
+      "title": "Spironolactone + potassium supplements",
+      "severity": "contraindicated",
+      "description": "Potassium-sparing diuretic plus potassium supplementation is a classic hyperkalemia combination; avoid unless explicitly directed with monitoring.",
+      "mechanism": "Renal K+ excretion blockade",
+      "aTokens": ["spironolactone", "aldactone", "eplerenone"],
+      "bTokens": ["potassium", "klor-con"]
+    },
+    {
+      "id": "ssri-tramadol-triptan",
+      "title": "SSRI/SNRI + tramadol or triptans",
+      "severity": "major",
+      "description": "Serotonergic combinations raise serotonin-syndrome risk: agitation, hyperreflexia, fever. Watch for early symptoms in the first days of combined use.",
+      "mechanism": "Additive serotonergic activity",
+      "aTokens": ["sertraline", "fluoxetine", "paroxetine", "citalopram", "escitalopram", "venlafaxine", "duloxetine", "zoloft", "prozac", "lexapro"],
+      "bTokens": ["tramadol", "sumatriptan", "rizatriptan", "zolmitriptan", "linezolid", "st johns wort"]
+    },
+    {
+      "id": "opioid-benzodiazepine",
+      "title": "Opioid + benzodiazepine / sleep aid",
+      "severity": "contraindicated",
+      "description": "Boxed-warning combination: profound sedation, respiratory depression, death. If co-prescribed, dose-reduction and supervision are expected.",
+      "mechanism": "Additive CNS/respiratory depression",
+      "aTokens": ["oxycodone", "hydrocodone", "morphine", "codeine", "fentanyl", "tramadol", "hydromorphone"],
+      "bTokens": ["alprazolam", "lorazepam", "clonazepam", "diazepam", "temazepam", "zolpidem", "ambien", "xanax", "ativan", "klonopin"]
+    },
+    {
+      "id": "digoxin-amiodarone",
+      "title": "Digoxin + amiodarone",
+      "severity": "major",
+      "description": "Amiodarone raises digoxin plasma levels ~2x via P-gp inhibition; halve digoxin dose and monitor for nausea, visual changes, arrhythmia.",
+      "mechanism": "P-glycoprotein inhibition",
+      "aTokens": ["digoxin", "lanoxin"],
+      "bTokens": ["amiodarone", "cordarone"]
+    },
+    {
+      "id": "lithium-nsaid-thiazide",
+      "title": "Lithium + NSAIDs or thiazide diuretics",
+      "severity": "major",
+      "description": "NSAIDs and thiazides increase lithium reabsorption and can push levels toward toxicity even at stable doses. Any new NSAID course warrants level re-check.",
+      "mechanism": "Reduced renal lithium clearance",
+      "aTokens": ["lithium", "lithobid"],
+      "bTokens": ["ibuprofen", "naproxen", "diclofenac", "aspirin", "hydrochlorothiazide", "chlorthalidone", "indomethacin"]
+    },
+    {
+      "id": "clopidogrel-ppi",
+      "title": "Clopidogrel + omeprazole/esomeprazole",
+      "severity": "major",
+      "description": "These PPIs block CYP2C19 activation of clopidogrel, reducing its antiplatelet effect. Pantoprazole is the usual safe alternative.",
+      "mechanism": "CYP2C19 inhibition",
+      "aTokens": ["clopidogrel", "plavix"],
+      "bTokens": ["omeprazole", "esomeprazole", "prilosec", "nexium"]
+    },
+    {
+      "id": "methotrexate-nsaid-alcohol",
+      "title": "Methotrexate + NSAIDs / alcohol",
+      "severity": "major",
+      "description": "NSAIDs can reduce methotrexate clearance (toxicity: marrow suppression, mucositis); alcohol compounds hepatotoxicity. Weekly labs advised.",
+      "mechanism": "Reduced clearance + hepatotoxicity",
+      "aTokens": ["methotrexate", "trexall"],
+      "bTokens": ["ibuprofen", "naproxen", "aspirin", "diclofenac", "alcohol"]
+    },
+    {
+      "id": "nitrates-pde5",
+      "title": "Nitrates + PDE5 inhibitors (sildenafil/tadalafil)",
+      "severity": "contraindicated",
+      "description": "Absolutely contraindicated within 24h (sildenafil) or 48h (tadalafil): catastrophic hypotension and syncope.",
+      "mechanism": "Massive NO-mediated vasodilation",
+      "aTokens": ["nitroglycerin", "isosorbide", "nitroprusside"],
+      "bTokens": ["sildenafil", "tadalafil", "vardenafil", "viagra", "cialis"]
+    },
+    {
+      "id": "carbamazepine-cyp3a4-grapefruit",
+      "title": "Carbamazepine + grapefruit",
+      "severity": "moderate",
+      "category": "food",
+      "description": "Grapefruit components raise carbamazepine levels via CYP3A4 inhibition; diplopia/dizziness may indicate toxicity.",
+      "mechanism": "CYP3A4 inhibition",
+      "aTokens": ["carbamazepine", "tegretol"],
+      "bTokens": ["grapefruit"]
+    },
+    {
+      "id": "cyclosporine-grapefruit",
+      "title": "Cyclosporine + grapefruit",
+      "severity": "major",
+      "category": "food",
+      "description": "Grapefruit significantly increases cyclosporine exposure; immunosuppressive toxicity affects kidneys. Transplant patients must avoid entirely.",
+      "mechanism": "CYP3A4/P-gp inhibition",
+      "aTokens": ["cyclosporine", "tacrolimus", "sirolimus", "everolimus", "prograf", "neoral"],
+      "bTokens": ["grapefruit"]
+    },
+    {
+      "id": "levodopa-protein-food",
+      "title": "Levodopa + high-protein meals",
+      "severity": "moderate",
+      "category": "food",
+      "description": "Dietary protein competes for intestinal absorption and transport, blunting levodopa effect. Distribute protein evenly; take dose 30 min before meals.",
+      "mechanism": "Competitive amino-acid transport",
+      "aTokens": ["levodopa", "carbidopa", "sinemet", "ropinirole"],
+      "bTokens": ["protein", "dairy", "meat"]
+    },
+    {
+      "id": "bisphosphonate-empty-rules-food",
+      "title": "Bisphosphonates require strict fasting dosing",
+      "severity": "moderate",
+      "category": "food",
+      "description": "Alendronate/risedronate absorption is almost abolished by food, calcium or coffee. Take with plain water on empty stomach, stay upright 30 minutes.",
+      "mechanism": "Severely reduced absorption",
+      "aTokens": ["alendronate", "risedronate", "ibandronate", "fosamax"],
+      "bTokens": ["calcium", "coffee", "dairy", "orange juice"]
+    },
+    {
+      "id": "sjw-broad",
+      "title": "St John's Wort broad interaction",
+      "severity": "major",
+      "category": "herb",
+      "description": "Powerful CYP3A4/P-gp inducer: reduces efficacy of oral contraceptives, cyclosporine, warfarin, many statins and antiretrovirals; serotonergic risk with SSRIs.",
+      "mechanism": "CYP3A4 induction",
+      "aTokens": ["warfarin", "cyclosporine", "tacrolimus", "sertraline", "fluoxetine", "atorvastatin", "simvastatin", "digoxin", "carbamazepine", "indinavir"],
+      "bTokens": ["st johns wort", "hypericum", "stjohnswort"]
+    },
+    {
+      "id": "ginkgo-anticoagulant",
+      "title": "Ginkgo biloba + anticoagulants / antiplatelets",
+      "severity": "moderate",
+      "category": "herb",
+      "description": "Ginkgo has mild antiplatelet activity; case reports of bleeding when combined with warfarin/aspirin. Avoid unsupervised use.",
+      "mechanism": "Antiplatelet potentiation",
+      "aTokens": ["warfarin", "aspirin", "clopidogrel", "apixaban", "rivaroxaban", "dabigatran"],
+      "bTokens": ["ginkgo"]
+    },
+    {
+      "id": "garlic-ginger-anticoagulant",
+      "title": "Garlic/ginger supplements + blood thinners",
+      "severity": "minor",
+      "category": "herb",
+      "description": "High-dose garlic or ginger supplements may add mild antiplatelet effect to anticoagulants; culinary amounts are fine.",
+      "mechanism": "Mild antiplatelet activity",
+      "aTokens": ["warfarin", "apixaban", "rivaroxaban", "clopidogrel", "aspirin"],
+      "bTokens": ["garlic", "ginger", "fish oil"]
+    },
+    {
+      "id": "apixaban-other-anticoag",
+      "title": "Two anticoagulants / antiplatelets together",
+      "severity": "contraindicated",
+      "description": "Combining DOACs/warfarin/antiplatelets multiplies major bleeding risk unless a clinician deliberately overlaps therapy (e.g., bridging).",
+      "mechanism": "Additive anticoagulation",
+      "aTokens": ["warfarin", "apixaban", "rivaroxaban", "dabigatran", "edoxaban"],
+      "bTokens": ["warfarin", "apixaban", "rivaroxaban", "dabigatran", "edoxaban", "aspirin", "clopidogrel", "heparin", "enoxaparin"]
+    },
+    {
+      "id": "beta-blocker-verapamil",
+      "title": "Beta-blocker + verapamil/diltiazem",
+      "severity": "major",
+      "description": "Additive negative chronotropy/inotropy: bradycardia, heart block, hypotension. Monitor heart rate closely if co-prescribed.",
+      "mechanism": "Combined AV-node suppression",
+      "aTokens": ["metoprolol", "atenolol", "carvedilol", "propranolol", "bisoprolol"],
+      "bTokens": ["verapamil", "diltiazem"]
+    },
+    {
+      "id": "maoi-ssri",
+      "title": "MAOI + SSRI/SNRI/tramadol",
+      "severity": "contraindicated",
+      "description": "Serotonin syndrome and hypertensive crisis risk; requires washout periods between classes.",
+      "mechanism": "Serotonin excess",
+      "aTokens": ["phenelzine", "tranylcypromine", "selegiline", "isocarboxazid"],
+      "bTokens": ["sertraline", "fluoxetine", "paroxetine", "citalopram", "escitalopram", "venlafaxine", "duloxetine", "tramadol"]
+    },
+    {
+      "id": "potassium-sparing-loop",
+      "title": "Loop diuretics cause potassium loss",
+      "severity": "moderate",
+      "description": "Furosemide-class drugs waste potassium; hypokalemia increases digoxin toxicity and arrhythmia risk. Dietary K+ or prescribed supplements often needed.",
+      "mechanism": "Renal K+ wasting",
+      "aTokens": ["furosemide", "lasix", "bumetanide", "torsemide"],
+      "bTokens": ["digoxin", "potassium"]
+    }
+  ]
+}
